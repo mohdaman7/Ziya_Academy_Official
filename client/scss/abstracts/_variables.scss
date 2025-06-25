@@ -1,0 +1,34 @@
+// Color Scheme
+$primary-blue: #00aeef;
+$dark-blue: #0088cc;
+$accent-green: #8dc63f;
+$dark-green: #6da22b;
+$logo-dark: #1f2937;
+$light-gray: #f3f4f6;
+$medium-gray: #e5e7eb;
+$text-dark: #111827;
+$text-medium: #6b7280;
+$white: #ffffff;
+$border-radius: 8px; 
+$font-primary: 'Poppins', sans-serif;
+$font-secondary: 'Montserrat', sans-serif;
+$box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+$transition: all 0.3s ease;
+
+// Breakpoints map
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+// Dimensions
+$border-radius: 8px;
+$box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+// Gradients
+$hero-gradient: linear-gradient(135deg, $primary-blue 0%, $accent-green 100%);
+
+// Transitions
+$transition: all 0.3s ease;

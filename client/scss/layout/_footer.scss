@@ -1,0 +1,243 @@
+// Variables
+$footer-bg: #0c2433;
+$footer-text: #ffffff;
+$footer-link: rgba(255, 255, 255, 0.85);
+$footer-link-hover: #ffffff;
+$footer-accent: #8dc63f;
+$footer-border: rgba(255, 255, 255, 0.1);
+
+.footer-main {
+  background-color: $footer-bg;
+  color: $footer-text;
+  padding: 80px 0 30px;
+  font-family: "Poppins", sans-serif;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+}
+
+// Top Logo + Tagline
+.footer-top-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 30px;
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    img {
+      height: 40px;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+
+      .logo-title {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #00aeef;
+      }
+
+      .logo-tagline {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: $footer-accent;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+
+  .footer-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-top: 10px;
+    max-width: 100%;
+    opacity: 0.85;
+  }
+}
+
+// Grid Layout
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+// Column Styles
+.footer-col {
+  .footer-heading {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 40px;
+      height: 3px;
+      background-color: $footer-accent;
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      border-radius: 3px;
+    }
+  }
+}
+
+.footer-links {
+  list-style: none;
+
+  li {
+    margin-bottom: 10px;
+
+    a {
+      color: $footer-link;
+      text-decoration: none;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: $footer-link-hover;
+        padding-left: 5px;
+      }
+    }
+  }
+}
+
+.footer-contact {
+  list-style: none;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 12px;
+    color: $footer-link;
+    line-height: 1.5;
+
+    i {
+      color: $footer-accent;
+      margin-top: 4px;
+    }
+  }
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: $footer-text;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: $footer-accent;
+      transform: translateY(-3px);
+    }
+  }
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid $footer-border;
+  padding-top: 20px;
+  font-size: 0.85rem;
+  opacity: 0.75;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
+.footer-legal {
+  display: flex;
+  gap: 20px;
+
+  a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+
+    &:hover {
+      color: $footer-link-hover;
+    }
+  }
+}
+.footer-about {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 5px;
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+
+    img {
+      height: 40px;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+      justify-content: center;
+    }
+
+    .logo-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #00aeef;
+    }
+
+    .logo-tagline {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: $footer-accent;
+      margin-top: 2px;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  .footer-description {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    line-height: 1.6;
+    max-width: 260px;
+    margin-top: 0px;
+    margin-bottom: 25px;
+    padding-left: 3px;
+    transform: translateY(-5px);
+  }
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  align-items: flex-start;
+  gap: 30px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}

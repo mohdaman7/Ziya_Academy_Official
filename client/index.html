@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Ziya Academy - Premier education center offering school coaching (LKG to +2), NIOS/IGNOU support, and professional IT training with internship opportunities" />
+  <meta name="keywords"
+    content="Ziya Academy, School Coaching, NIOS, IGNOU, IT Training, Internships, Web Development" />
+  <title>Ziya Academy | Key to Success in Education & IT Training</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/yup@0.32.11/dist/yup.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/formik@2.2.9/dist/formik.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+</head>
+
+<body>
+  <!-- Sticky Navigation -->
+  <header class="header">
+    <nav class="navbar container">
+      <a href="index.html" class="logo">
+        <img src="assets/icons/Vector.png" alt="Ziya Academy Logo" />
+        <div class="logo-text">
+          <span class="logo-title">ZiyaAcademy</span>
+          <span class="logo-tagline">KEY-TO SUCCESS</span>
+        </div>
+      </a>
+
+      <div class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li>
+            <a href="under_construction.html" class="nav-link">About</a>
+          </li>
+          <li>
+            <a href="under_construction.html" class="nav-link">Courses</a>
+          </li>
+          <li>
+            <a href="under_construction.html" class="nav-link">Internships</a>
+          </li>
+          <li>
+            <a href="under_construction.html" class="nav-link">Services</a>
+          </li>
+          <li>
+            <a href="under_construction.html" class="nav-link">Contact</a>
+          </li>
+        </ul>
+        <div class="nav-cta">
+          <a href="enquiry.html" class="btn btn-primary">Enquiry</a>
+        </div>
+      </div>
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Unlock Your Potential <br />with Ziya Academy
+        </h1>
+        <p class="hero-text">
+          From school education to professional IT training - your complete
+          learning solution
+        </p>
+        <div class="hero-buttons">
+          <a href="under_construction.html" class="btn btn-secondary1">Free Consultation <i
+              class="fa-solid fa-circle-play"></i></a>
+          <a href="under_construction.html" class="btn btn-secondary2">Explore Courses<i
+              class="fa-solid fa-circle-play"></i></a>
+        </div>
+      </div>
+      <!-- <div class="hero-image">
+        <img src="images/Students_Engaged_in_Learning.png" alt="Students learning at Ziya Academy">
+      </div> -->
+    </div>
+  </section>
+
+  <div class="about-stats">
+    <div class="stat-box">
+      <div class="stat-number">100+</div>
+      <div class="stat-label">Completed Projects</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number">500+</div>
+      <div class="stat-label">Satisfied Customers</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number">10+</div>
+      <div class="stat-label">Years of Mastery</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number">25+</div>
+      <div class="stat-label">Employees</div>
+    </div>
+  </div>
+
+  <!-- About Us Section -->
+  <!-- <section class="about section">
+      <div class="container about-container">
+        <div class="about-image-block">
+          <img
+            src="assets/images/about_bg.png"
+            alt="Ziya Team Working"
+            class="main-about-img"
+          />
+        </div>
+        <div class="about-text-block">
+          <h2 class="about-title">About Us</h2>
+          <br />
+          <p class="about-des1">
+            Ziya Academy is more than just an educational institution, it's a
+            place where potential meets purpose. Our mission is to empower
+            students through personalized education and skill-building, helping
+            them unlock their strengths and achieve their academic and career
+            goals.
+          </p>
+          <p class="about-des2">
+            At Ziya Academy, we believe that quality education lays the
+            foundation for a brighter future. That’s why we are committed to
+            delivering high-impact learning experiences through qualified
+            tutors, tailored teaching methods, and a student-first approach.
+          </p>
+          <br />
+          <div class="mission-vision">
+            <div class="mv-block">
+              <img
+                src="assets/images/Group 341.png"
+                alt="Mission Icon"
+                class="mv-icon"
+              />
+              <h3 class="mv-title green">Our Mission</h3>
+              <p class="mv-text">
+                To provide affordable, quality education through <br />
+                innovative teaching methods
+              </p>
+            </div>
+
+            <div class="mv-block">
+              <img
+                src="assets/images/Group 342.png"
+                alt="Vision Icon"
+                class="mv-icon"
+              />
+              <h3 class="mv-title blue">Our Vision</h3>
+              <p class="mv-text">
+                To be the leading educational institution that empowers <br />
+                students with knowledge, skills, and values.
+              </p>
+            </div>
+          </div>
+
+          <a href="under_construction.html" class="btn btn-outline"
+            >Explore More</a
+          >
+        </div>
+      </div>
+    </section> -->
+  <!-- About Us Section -->
+  <section class="about section">
+    <div class="container about-container">
+      <div class="about-image-block">
+        <img src="assets/images/about_bg.png" alt="Ziya Team Working" class="main-about-img" />
+      </div>
+      <div class="about-text-block">
+        <h2 class="about-title">About Us</h2>
+        <p class="about-description">
+          Ziya Academy is more than just an educational institution, it's a
+          place where potential meets purpose. Our mission is to empower
+          students through personalized education and skill-building, helping
+          them unlock their strengths and achieve their academic and career
+          goals.
+        </p>
+        <p class="about-description">
+          At Ziya Academy, we believe that quality education lays the
+          foundation for a brighter future. That's why we are committed to
+          delivering high-impact learning experiences through qualified
+          tutors, tailored teaching methods, and a student-first approach.
+        </p>
+
+        <div class="mission-vision">
+          <div class="mv-block">
+            <div class="mv-header">
+              <img src="assets/images/Group 341.png" alt="Mission Icon" class="mv-icon" />
+              <h3 class="mv-title green">Our Mission</h3>
+            </div>
+            <p class="mv-text">
+              To provide affordable, quality education through innovative
+              teaching methods
+            </p>
+          </div>
+
+          <div class="mv-block">
+            <div class="mv-header">
+              <img src="assets/images/Group 342.png" alt="Vision Icon" class="mv-icon" />
+              <h3 class="mv-title blue">Our Vision</h3>
+            </div>
+            <p class="mv-text">
+              To be the leading educational institution that empowers students
+              with knowledge, skills, and values.
+            </p>
+          </div>
+        </div>
+
+        <a href="under_construction.html" class="btn btn-outline">Explore More</a>
+      </div>
+    </div>
+  </section>
+  <!-- Services Section -->
+  <section class="services-section">
+    <div class="container center">
+      <h2 class="testimonials-title">Our Services</h2>
+      <p class="testimonials-subtitle">
+        Quality education for all levels and needs
+      </p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <img src="assets/icons/school_icon.svg" alt="School Coaching" class="service-icon" />
+          <h3 class="service-title">School Coaching</h3>
+          <p class="service-description">
+            LKG to +2 with personalized attention and CBSE/State syllabus
+          </p>
+        </div>
+
+        <div class="service-card">
+          <img src="assets/icons/NIOS_IGNOU_icon.svg" alt="NIOS/IGNOU" class="service-icon" />
+          <h3 class="service-title">NIOS/IGNOU</h3>
+          <p class="service-description">
+            Complete support for open schooling and distance education
+          </p>
+        </div>
+
+        <div class="service-card">
+          <img src="assets/icons/IT_icon.svg" alt="IT Training" class="service-icon" />
+          <h3 class="service-title">IT Training</h3>
+          <p class="service-description">
+            Web development, app development, and software courses
+          </p>
+        </div>
+
+        <div class="service-card">
+          <img src="assets/icons/Internship_icon.svg" alt="Internships" class="service-icon" />
+          <h3 class="service-title">Internships</h3>
+          <p class="service-description">
+            Hands-on experience with real-world projects
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="testimonials-header">
+        <h2 class="testimonials-title">What Our Students Say</h2>
+        <p class="testimonials-subtitle">
+          Hear from those who've experienced Ziya Academy
+        </p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-profile">
+            <img src="assets/images/web_testimonial.png" alt="Praveen" class="testimonial-avatar" />
+            <div class="testimonial-info">
+              <h3 class="testimonial-name">Praveen</h3>
+              <p class="testimonial-role">Web Development Student</p>
+            </div>
+          </div>
+          <p class="testimonial-text">
+            The web development internship gave me real project experience
+            that helped me land my first job as a frontend developer.
+          </p>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-profile">
+            <img src="assets/images/nios_testimonial.png" alt="Reshma" class="testimonial-avatar" />
+            <div class="testimonial-info">
+              <h3 class="testimonial-name">Reshma</h3>
+              <p class="testimonial-role">NIOS Student</p>
+            </div>
+          </div>
+          <p class="testimonial-text">
+            Ziya Academy helped me complete my NIOS while working. The
+            flexible timing and supportive teachers made all the difference.
+          </p>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-profile">
+            <img src="assets/images/uiux_testimonial.png" alt="Abhishek" class="testimonial-avatar" />
+            <div class="testimonial-info">
+              <h3 class="testimonial-name">Abhishek</h3>
+              <p class="testimonial-role">UI/UX Design Student</p>
+            </div>
+          </div>
+          <p class="testimonial-text">
+            Grateful for the guidance, mentorship, and opportunity to grow as
+            a budding UI/UX designer. Excited to apply skills in future
+            projects.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enquiry Form Section -->
+  <section class="enquiry-form-section">
+    <div class="container enquiry-form-container">
+      <div class="enquiry-form-content-section">
+        <div class="enquiry-form-hero">
+          <h1>Unlock Your Potential With Ziya Academy</h1>
+          <p>
+            From school education to professional IT training - your complete
+            learning solutions.
+          </p>
+        </div>
+      </div>
+
+      <div class="enquiry-form-wrapper">
+        <div class="form-side-header">
+          <h2>Get Started</h2>
+          <p>Fill out the form below and we'll get back to you</p>
+        </div>
+        <div class="enquiry-form-card">
+          <div class="enquiry-form-body">
+            <form id="enquiryForm">
+              <div class="enquiry-form-group">
+                <label for="name">Full Name*</label>
+                <div class="enquiry-input-wrapper">
+                  <img src="./assets/icons/user_icon.svg" alt="user" class="enquiry-input-icon-img" />
+                  <input type="text" id="name" name="name" class="enquiry-form-input" />
+                </div>
+                <div class="error-message" id="name-error"></div>
+              </div>
+
+              <div class="enquiry-form-group">
+                <label for="email">Email Address*</label>
+                <div class="enquiry-input-wrapper">
+                  <img src="./assets/icons/email_icon.svg" alt="email" class="enquiry-input-icon-img" />
+                  <input type="email" id="email" name="email" class="enquiry-form-input" />
+                </div>
+                <div class="error-message" id="email-error"></div>
+              </div>
+
+              <div class="enquiry-form-group">
+                <label for="phone">Phone Number*</label>
+                <div class="enquiry-input-wrapper">
+                  <img src="./assets/icons/phone_icon.svg" alt="phone" class="enquiry-input-icon-img" />
+                  <input type="tel" id="phone" name="phone" class="enquiry-form-input" />
+                </div>
+                <div class="error-message" id="phone-error"></div>
+              </div>
+
+              <div class="enquiry-form-group">
+                <label for="category">I'm Interested In*</label>
+                <div class="enquiry-input-wrapper">
+                  <select name="category" id="category" class="enquiry-form-select">
+                    <option value="">Choose your area of interest</option>
+                    <option value="school">
+                      School Education (LKG to +2)
+                    </option>
+                    <option value="nios">
+                      NIOS (National Institute of Open Schooling)
+                    </option>
+                    <option value="ignou">IGNOU (Distance Learning)</option>
+                    <option value="internship">
+                      Professional Internship Program
+                    </option>
+                    <option value="it_services">
+                      IT Services & Solutions
+                    </option>
+                  </select>
+                  <i class="fas fa-graduation-cap enquiry-input-icon"></i>
+                </div>
+                <div class="error-message" id="category-error"></div>
+              </div>
+
+              <!-- SCHOOL Options -->
+              <div class="enquiry-sub-field" id="school-options">
+                <div class="enquiry-form-group">
+                  <label for="school_class">Select Class/Grade*</label>
+                  <select name="school_class" id="school_class" class="enquiry-form-select">
+                    <option value="">Choose your class</option>
+                    <option value="lkg">LKG (Lower Kindergarten)</option>
+                    <option value="ukg">UKG (Upper Kindergarten)</option>
+                    <option value="1-5">Classes 1st to 5th</option>
+                    <option value="6-10">Classes 6th to 10th</option>
+                    <option value="plus-one">Plus One (11th Grade)</option>
+                    <option value="plus-two">Plus Two (12th Grade)</option>
+                  </select>
+                </div>
+                <div class="error-message" id="school_class-error"></div>
+              </div>
+
+              <!-- INTERNSHIP Options -->
+              <div class="enquiry-sub-field" id="internship-options">
+                <div class="enquiry-form-group">
+                  <label for="internship">Choose Internship Program*</label>
+                  <select name="internship" id="internship" class="enquiry-form-select">
+                    <option value="">Select your specialization</option>
+                    <option value="python">Python Development</option>
+                    <option value="react">React.js Development</option>
+                    <option value="flutter">
+                      Flutter Mobile Development
+                    </option>
+                    <option value="uiux">UI/UX Design</option>
+                    <option value="mern">MERN Stack Development</option>
+                    <option value="testing">Software Testing & QA</option>
+                    <option value="cybersecurity">Cyber Security</option>
+                    <option value="digital-marketing">
+                      Digital Marketing
+                    </option>
+                  </select>
+                </div>
+                <div class="error-message" id="internship-error"></div>
+                <div class="terms-checkbox">
+                  <input type="checkbox" id="termsCheckbox" name="termsAccepted">
+                  <label for="termsCheckbox">I accept the <a href="terms_conditions.html" target="_blank">Terms &
+                      Conditions</a></label>
+                  <div class="error-message" id="termsAccepted-error"></div>
+                </div>
+              </div>
+
+              <!-- IT SERVICES Options -->
+              <div class="enquiry-sub-field" id="it-services-options">
+                <div class="enquiry-form-group">
+                  <label for="it_service">Select IT Service*</label>
+                  <select name="it_service" id="it_service" class="enquiry-form-select">
+                    <option value="">Choose the service you need</option>
+                    <option value="mobile-app">Mobile App Development</option>
+                    <option value="web-app">
+                      Web Application Development
+                    </option>
+                    <option value="dashboard">
+                      Dashboard & Analytics Solutions
+                    </option>
+                    <option value="ecommerce">E-commerce Solutions</option>
+                    <option value="custom-software">
+                      Custom Software Development
+                    </option>
+                  </select>
+                </div>
+                <div class="error-message" id="it_service-error"></div>
+              </div>
+
+              <div class="enquiry-form-group">
+                <label for="message">Message or Specific Requirements</label>
+                <textarea name="message" id="message" rows="3" class="enquiry-form-textarea"
+                  placeholder="Tell us more..."></textarea>
+              </div>
+
+              <button type="submit" class="enquiry-submit-btn">
+                Send Enquiry
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="footer-main">
+    <div class="container">
+      <!-- Logo + Tagline -->
+      <div class="footer-top-row">
+        <div class="footer-logo">
+          <img src="assets/icons/Vector.png" alt="Ziya Academy Logo" />
+          <div class="logo-text">
+            <span class="logo-title">ZiyaAcademy</span>
+            <span class="logo-tagline">KEY TO SUCCESS</span>
+          </div>
+        </div>
+
+        <!-- Tagline moved above links -->
+        <p class="footer-description">
+          Providing quality education and training with proven results and
+          student satisfaction since 2010.
+        </p>
+      </div>
+
+      <!-- Main Grid: Social + Links + Programs + Contact -->
+      <div class="footer-grid">
+        <!-- Social Links -->
+        <div class="footer-col social-col">
+          <h3 class="footer-heading">Follow Us</h3>
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Programs -->
+        <div class="footer-col">
+          <h3 class="footer-heading">Programs</h3>
+          <ul class="footer-links">
+            <li><a href="#">School Coaching</a></li>
+            <li><a href="#">NIOS/IGNOU</a></li>
+            <li><a href="#">Web development</a></li>
+            <li><a href="#">Internships</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-col">
+          <h3 class="footer-heading">Contact Us</h3>
+          <ul class="footer-contact">
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                Muppathadom Rd, near<br />
+                Muthukkad Temple,<br />
+                Muppathadom, Edayar, Aluva,<br />
+                Kerala 683110
+              </div>
+            </li>
+            <li><i class="fas fa-phone-alt"></i> +91 7306353515</li>
+            <li><i class="fas fa-envelope"></i> ziyaacademyedu@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Legal -->
+      <div class="footer-bottom">
+        <p>&copy; 2025 Ziya Academy. All Rights Reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

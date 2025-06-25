@@ -1,0 +1,30 @@
+@media (max-width: 992px) {
+  .services {
+    &-section {
+      padding: 50px 40px;
+    }
+    
+    &-grid {
+      gap: 15px;
+    }
+  }
+  
+  .service-card {
+    min-width: 180px;
+  }
+}
+@media (max-width: 992px) {
+  .testimonials {
+    &-section {
+      padding: 60px 0;
+    }
+    
+    &-grid {
+      gap: 20px;
+    }
+    
+    &-card {
+      min-width: 280px;
+    }
+  }
+}

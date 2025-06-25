@@ -1,0 +1,81 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 30px;
+  border-radius: $border-radius;
+  font-weight: 600;
+  text-decoration: none;
+  transition: $transition;
+  border: 2px solid transparent;
+  font-family: $font-primary;
+
+  &-primary {
+    background-color: $primary-blue;
+    color: white;
+    width: 200px;
+    height: 52px;
+
+    &:hover {
+      background-color: darken($primary-blue, 10%);
+    }
+  }
+
+  &-secondary1 {
+    @extend .btn;
+    border: 2px solid $primary-blue;
+    color: white;
+    width: 244px;
+    height: 52px;
+
+    &:hover {
+      background-color: $primary-blue;
+    }
+
+    i {
+      padding-left: 13px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 8px;
+      font-size: 0.8rem;
+    }
+  }
+  &-secondary2 {
+      @extend .btn;
+      background: $primary-blue;
+      color: white;
+      width: 244px;
+      height: 52px;
+
+      &:hover {
+        background-color: rgb(9, 123, 200);
+      }
+
+      i {
+        padding-left: 13px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 8px;
+        font-size: 0.8rem;
+      }
+    }
+
+  &-outline {
+    font-size: 20px;
+    font-weight: 300;
+    width: 200px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $primary-blue;
+    color: white;
+    text-align: center;
+
+    &:hover {
+      background-color: darken($primary-blue, 10%);
+    }
+  }
+}

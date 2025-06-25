@@ -1,0 +1,32 @@
+// Main SCSS file
+
+// Abstracts
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+
+// Base
+@import 'base/reset';
+
+
+// Components
+@import 'components/buttons';
+@import 'components/services';
+@import 'components/testimonials';
+@import 'components/forms';
+
+// Layout
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/hero';
+
+
+// Pages
+@import 'pages/home';
+@import 'pages/about';
+@import 'pages/terms';
+
+
+// Responsive
+@import 'responsive/tablet';
+@import 'responsive/mobile';
