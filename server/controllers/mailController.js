@@ -90,29 +90,51 @@ exports.sendEnquiry = async (req, res) => {
       to: email,
       subject: `Thank you for your enquiry - ${process.env.COMPANY_NAME || 'Our Service'}`,
       html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #2c3e50;">Dear ${name},</h2>
-          <p>Thank you for contacting us about ${getCategoryName(category)}. We've received your enquiry and our team will respond within 24-48 hours.</p>
-          
-          <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #3498db; margin: 20px 0;">
-            <h3 style="margin-top: 0;">Your Enquiry Details:</h3>
-            <p><strong>Reference:</strong> ENQ-${Date.now().toString().slice(-6)}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Phone:</strong> ${phone}</p>
-            ${additionalInfo ? `<p><strong>Details:</strong> ${additionalInfo}</p>` : ''}
-          </div>
-          
-          <p>For urgent matters, please contact us at:</p>
-          <p>📞 ${process.env.COMPANY_PHONE || 'Not specified'}</p>
-          <p>✉️ ${process.env.SUPPORT_EMAIL || process.env.EMAIL_USER}</p>
-          
-          <p style="margin-top: 30px;">Best regards,<br>
-          <strong>The ${process.env.COMPANY_NAME || 'Customer Support'} Team</strong></p>
-          
-          <div style="margin-top: 40px; font-size: 12px; color: #7f8c8d; border-top: 1px solid #eee; padding-top: 10px;">
-            <p>This is an automated message. Please do not reply directly to this email.</p>
-          </div>
-        </div>
+        <div style="max-width:600px; margin:auto; font-family:'Poppins', Arial, sans-serif; border:1px solid #e0e0e0; border-radius:8px; padding:30px; background-color:#ffffff; color:#333333; font-size:16px; line-height:1.6;">
+
+  <div style="text-align:center; border-bottom:1px solid #ddd; padding-bottom:20px; margin-bottom:25px;">
+    <h2 style="font-size:26px; color:#00aeef; margin:0; font-weight:600;">ZiyaAcademy</h2>
+    <div style="margin-top:5px;">
+      <span style="color:#8dc63f; font-size:14px; font-weight:700;">KEY-TO SUCCESS</span>
+    </div>
+  </div>
+
+  
+  <p>Hi <strong>${name}</strong>,</p>
+
+  <p>Thank you for reaching out to <strong>Ziya Academy</strong>. We’ve received your enquiry and our team will get back to you shortly.</p>
+
+  <p>We appreciate your interest and look forward to assisting you.</p>
+
+  <p>We're excited to connect with you and help with whatever you need. In the meantime, feel free to explore more about us on our website or follow us on social media.</p>
+
+  
+  <p style="margin-top:30px;">
+    <strong>Warm regards,</strong><br>
+    Team Ziya Academy
+  </p>
+
+  
+  <div style="margin-top:20px;">
+    <p style="font-weight:500; margin-bottom:10px;">🔗 Connect with us:</p>
+    <ul style="list-style:none; padding:0; margin:0;">
+      <li style="margin-bottom:8px;">
+        🌐 <a href="https://ziyaacademy.com" style="color:#0a66c2; text-decoration:none;">ziyaacademy.com</a>
+      </li>
+      <li style="margin-bottom:8px;">
+        📘 <a href="https://www.facebook.com/profile.php?id=61571052597141" style="color:#0a66c2; text-decoration:none;">facebook.com/ziyaacademy</a>
+      </li>
+      <li>
+        📸 <a href="https://www.instagram.com/ziya_academy_?igsh=MWN2b201bWxubWtmaA==" style="color:#0a66c2; text-decoration:none;">instagram.com/ziyaacademy</a>
+      </li>
+    </ul>
+  </div>
+
+ 
+  <div style="text-align:center; border-top:1px solid #e0e0e0; margin-top:40px; padding-top:15px; font-size:13px; color:#999;">
+    © ${new Date().getFullYear()} Ziya Academy. All rights reserved.
+  </div>
+</div>
       `,
     };
 
@@ -120,10 +142,10 @@ exports.sendEnquiry = async (req, res) => {
     console.log('Sending admin email...');
     await transporter.sendMail(adminMailOptions);
     console.log('Admin email sent successfully');
-    
+
     // Add delay to prevent rate limiting
     await new Promise(resolve => setTimeout(resolve, 2000));
-    
+
     console.log('Sending user confirmation...');
     await transporter.sendMail(userMailOptions);
     console.log('User confirmation sent successfully');
@@ -135,7 +157,7 @@ exports.sendEnquiry = async (req, res) => {
 
   } catch (error) {
     console.error('Full error details:', error);
-    
+
     // Check if it's an email sending error
     if (error.code === 'EAUTH' || error.code === 'EENVELOPE') {
       return res.status(500).json({
@@ -143,7 +165,7 @@ exports.sendEnquiry = async (req, res) => {
         message: 'Email service configuration error. Please try again later.'
       });
     }
-    
+
     res.status(500).json({
       success: false,
       message: 'An unexpected error occurred. Please try again later.'
