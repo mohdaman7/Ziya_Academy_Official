@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   };
 
-  //Mobile Navigation 
+  // Mobile Navigation 
   const setupMobileNav = () => {
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('navMenu');
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Form Handling 
   const initializeEnquiryForm = () => {
-    // Toggle Sub Options Function
+   
     const toggleSubOptions = (category) => {
       const subFields = ['school-options', 'internship-options', 'it-options'];
       subFields.forEach(field => {
@@ -48,10 +48,23 @@ document.addEventListener('DOMContentLoaded', function () {
         const elementId = `${category.replace('_', '-')}-options`;
         const element = document.getElementById(elementId);
         if (element) element.style.display = 'block';
+        
+        // Show toast when internship is selected
+        if (category === 'internship') {
+          const termsCheckbox = document.getElementById('termsCheckbox');
+          if (!termsCheckbox.checked) {
+            Toastify({
+              text: "Please review and accept our terms & conditions for internship programs",
+              duration: 3000,
+              backgroundColor: "#f39c12",
+              position: "center",
+              className: "toast-warning"
+            }).showToast();
+          }
+        }
       }
     };
 
-    
     const showError = (fieldId, message) => {
       const errorElement = document.getElementById(`${fieldId}-error`);
       const inputElement = document.getElementById(fieldId);
@@ -63,7 +76,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     };
 
-  
     const clearError = (fieldId) => {
       const errorElement = document.getElementById(`${fieldId}-error`);
       const inputElement = document.getElementById(fieldId);
@@ -78,7 +90,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const validateForm = () => {
       let isValid = true;
 
-      
       document.querySelectorAll('.error-message').forEach(el => {
         el.style.display = 'none';
       });
@@ -125,6 +136,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const termsAccepted = document.getElementById('termsCheckbox').checked;
         if (!termsAccepted) {
+          Toastify({
+            text: "You must accept the terms and conditions to apply for internships",
+            duration: 3000,
+            backgroundColor: "#e74c3c",
+            position: "center",
+            className: "toast-error"
+          }).showToast();
+          
           showError('termsAccepted', 'You must accept the terms and conditions');
           isValid = false;
         }
@@ -139,7 +158,6 @@ document.addEventListener('DOMContentLoaded', function () {
       return isValid;
     };
 
-
     const getFormData = () => {
       const formData = {
         name: document.getElementById('name').value.trim(),
@@ -149,7 +167,6 @@ document.addEventListener('DOMContentLoaded', function () {
         message: document.getElementById('message').value.trim()
       };
 
-      // Add category-specific fields
       if (formData.category === 'school') {
         formData.school_class = document.getElementById('school_class').value;
       } else if (formData.category === 'internship') {
@@ -162,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function () {
       return formData;
     };
 
-    // Reset form
+  
     const resetForm = () => {
       document.getElementById('enquiryForm').reset();
       toggleSubOptions('');
@@ -184,14 +201,12 @@ document.addEventListener('DOMContentLoaded', function () {
       const originalBtnText = submitBtn.innerHTML;
 
       try {
-       
         submitBtn.disabled = true;
         submitBtn.classList.add('loading');
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
 
         const formData = getFormData();
 
-        // Send data to backend
         const response = await axios.post(
           'http://localhost:5000/api/mail/send-enquiry',
           formData
@@ -227,7 +242,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     };
 
- 
     const enquiryForm = document.getElementById('enquiryForm');
     if (enquiryForm) {
       enquiryForm.addEventListener('submit', handleSubmit);
@@ -240,7 +254,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
       }
 
-      // Handle terms checkbox change
       const termsCheckbox = document.getElementById('termsCheckbox');
       if (termsCheckbox) {
         termsCheckbox.addEventListener('change', () => {
@@ -248,7 +261,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
       }
 
-      // Handle input blur for validation
       const validateOnBlur = (e) => {
         const field = e.target;
         const fieldId = field.id;
@@ -256,7 +268,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         clearError(fieldId);
 
-        // Validate field
         if (field.required && !value) {
           showError(fieldId, 'This field is required');
         } else if (fieldId === 'email' && value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
@@ -274,19 +285,18 @@ document.addEventListener('DOMContentLoaded', function () {
         field.addEventListener('blur', validateOnBlur);
       });
 
-   
       if (categorySelect.value) {
         toggleSubOptions(categorySelect.value);
       }
     }
   };
 
- // Initialize All Functions 
+
   animateForm();
   initializeEnquiryForm();
   setupMobileNav();
 
-// Additional Styles for Toast Notifications
+  // Styles for Toast Notifications
   const style = document.createElement('style');
   style.textContent = `
     .toast-success {
@@ -298,6 +308,12 @@ document.addEventListener('DOMContentLoaded', function () {
       font-family: 'Poppins', sans-serif;
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+    }
+    .toast-warning {
+      font-family: 'Poppins', sans-serif;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(243, 156, 18, 0.3);
+      background-color: #f39c12;
     }
   `;
   document.head.appendChild(style);
